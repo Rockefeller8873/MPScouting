@@ -1,7 +1,7 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "title": "Scouting PASS 2025",
+  "title": "Scouing Rockefeller #8873 2025",
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
