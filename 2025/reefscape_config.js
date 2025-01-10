@@ -229,4 +229,3 @@ var config_data = `
     }
   ]
 }';
-    
