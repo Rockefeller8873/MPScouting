@@ -51,6 +51,25 @@
 					<h2 id="endgameHeader2">Endgame</h2>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
 					<table id="endgame_table">
+						<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True or False Buttons</title>
+</head>
+<body>
+
+    <h1>Choose True or False</h1>
+
+    <button onclick="checkAnswer(true)">True</button>
+    <button onclick="checkAnswer(false)">False</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer(answer) {
+            const resultText = answer ? "You selected True!" : "You selected False!";
+            document.getElementById("result").textContent = resultText;
 						<!-- ###ENDGAME-COMPONENTS###-->
 					</table>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
