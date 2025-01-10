@@ -1,3 +1,4 @@
+var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouing Rockefeller #8873 2025",
@@ -224,5 +225,6 @@
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55}]}
+      "maxSize": 55
+    }]}
     
