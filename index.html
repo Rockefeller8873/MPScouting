@@ -1,81 +1,51 @@
 <div id="qr-code" class="main-panel" style="background-color: white;">
-    <h1 id="qrHeader1" class="page_title">Scouting 2020</h1>
-    <h2 id="qrHeader2">Generate QR Code</h2>
-    <p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
-    <p id="qr-info"></p>
-    <table id="qr-table">
-        <tr>
-            <td width="5%">&nbsp;</td>
-            <td width="90%">
-                <div id="qrcode" style="text-align:center"></div>
-            </td>
-            <td width="5%">&nbsp;</td>
-        </tr>
-        <tr>
-            <td width="5%">&nbsp;</td>
-            <td width="90%">
-                <div>
-                    <p id="data" style="text-align:center"></p>
-                </div>
-            </td>
-            <td width="5%">&nbsp;</td>
-        </tr>
-    </table>
-    <p class="match-label">
-        <input type="button" value="Display Data" id="displayButton" onclick="displayData()">
-        <input type="button" value="Copy Data" id="copyButton" onclick="copyData()">
-    </p>
-    <div id="submitButton">
-        <button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
-    </div>
-    <div id="clearButton">
-        <button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
-    </div>
-    <br>
-</div>
+					<h1 id="qrHeader1" class="page_title">Scouting 2020</h1>
+					<h2 id="qrHeader2">Generate QR Code</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
+					<p id="qr-info"></p>
+					<table id="qr-table">
+						<tr>
+							<td width="5%">&nbsp;</td>
+							<td width="90%">
+								<div id="qrcode" style="text-align:center"></div>
+							</td>
+							<td width="5%">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="5%">&nbsp;</td>
+							<td width="90%">
+								<div>
+									<p id="data" style="text-align:center"></p>
+								</div>
+							</td>
+							<td width="5%">&nbsp;</td>
+						</tr>
+					</table>
+					<p class="match-label">
+						<input type="button" value="Display Data" id="displayButton" onclick="displayData()">
+						<input type="button" value="Copy Data" id="copyButton" onclick="copyData()">
+					</p>
+					<div id="submitButton">
+						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
+					</div>
+					<div id="clearButton">
+						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
+					</div>
+					<br>
+				</div>
+			</div>
+		</form>
 
-<!-- Ensure you close the form tag if necessary -->
-</form> <!-- Only if you have an opening <form> tag -->
-
-<!-- Include QR Code Library -->
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-
-<script>
-    // QR Code generation
-    var qr = new QRCode(document.getElementById("qrcode"), {
-        text: "Your QR code data here",
-        width: 128,
-        height: 128,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
-
-    // Placeholder for functions you mentioned
-    function swipePage(direction) {
-        console.log('Swiping page', direction);
-        // Add logic for page swipe
-    }
-
-    function displayData() {
-        var data = document.getElementById("data");
-        data.innerText = "QR Code Data: Your QR code data here";
-        // You can add logic to dynamically change the QR code data
-    }
-
-    function copyData() {
-        var text = "QR Code Data: Your QR code data here";
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Data copied to clipboard');
-        });
-    }
-
-    function clearForm() {
-        // Add logic to clear any form fields
-        document.getElementById("data").innerText = '';
-        qr.clear();  // Clear QR Code
-        alert('Form cleared');
-    }
-</script>
-</body>
+		<script>
+			// Example QR Code generation script
+			var qr = new QRCode(document.getElementById("qrcode"), {
+				text: "Your QR code data here",
+				width: 128,
+				height: 128,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+		</script>
+	</body>
 </html>
