@@ -226,16 +226,15 @@ var config_data = `
       "type": "text",
       "size": 15,
       "maxSize": 55
+    },
+    { "name": "Win or Loss",
+      "code": "wl",
+      "type": "radio",
+      "choices": {
+        "w": "Win",
+        "l": "Loss"
+      },
+      "required": "true"
     }
-    {
-  "name": "Win or Loss",
-  "code": "wl",
-  "type": "radio",
-  "choices": {
-    "w": "Win",
-    "l": "Loss"
-  },
-  "required": "true"
-}
   ]
 }`;
