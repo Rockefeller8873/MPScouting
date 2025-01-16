@@ -1,7 +1,7 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "title": "Scouting Rockefeller #8873 2025",
+  "title": "Scouting PASS 2025",
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
@@ -226,15 +226,6 @@ var config_data = `
       "type": "text",
       "size": 15,
       "maxSize": 55
-    },
-    { "name": "Win or Loss",
-      "code": "wl",
-      "type": "radio",
-      "choices": {
-        "w": "Win",
-        "l": "Loss"
-      },
-      "required": "true"
     }
   ]
 }`;
