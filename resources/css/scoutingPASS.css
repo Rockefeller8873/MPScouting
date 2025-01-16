@@ -54,8 +54,8 @@ html, body{
 }
 
 #prematchHeader1, #prematchHeader2{
-    color: white;
-    border-color: white;
+    color: yellow;
+    border-color: yellow;
     border-width: 4px;
 }
 
