@@ -24,17 +24,17 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: yellow;
+    border-color: rgb(0, 255, 0);
 }
 
 #auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    color: blue;
+    color: yellow;
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: yellow;
+    border-color: rgb(255, 0, 234);
 }
 
 .button {
@@ -44,18 +44,18 @@ html, body{
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: yellow;
-    border-color: yellow;
+    border-color: rgb(0, 255, 0);
     border-width: 4px;
 }
 
 #postmatchHeader{
     border-width: 4px;
-    border-color: yellow;
+    border-color: rgb(255, 0, 234);
 }
 
 #prematchHeader1, #prematchHeader2{
     color: yellow;
-    border-color: yellow;
+    border-color: rgb(0, 255, 0);
     border-width: 4px;
 }
 
@@ -156,7 +156,7 @@ h2{
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
     font-family: Alexis;
     padding: 10px;
-    background-color: rgb(151, 199, 240);
+    background-color: rgb(255, 0, 234);
     text-decoration: none;
     display: inline-block;
 }
@@ -165,7 +165,7 @@ h2{
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: white;
+    color: rgb(255, 0, 234);
 }
 
 .undoButton, .flipButton {
@@ -178,7 +178,7 @@ h2{
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(151, 199, 240);
+    background-color: rgb(0, 255, 0);
     padding: 10px;
 }
 
@@ -186,7 +186,7 @@ h2{
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: white;
+    color: rgb(0, 255, 0);
 
 }
 
@@ -199,7 +199,7 @@ h2{
 h1 .odd {
     font-family: Alexis;
     text-align: center;
-    color: #0AB4EC;
+    color: rgb(255, 0, 234);
 }
 
 h1 .even {
