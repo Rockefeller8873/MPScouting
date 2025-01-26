@@ -51,6 +51,7 @@ html, body{
 #postmatchHeader{
     border-width: 4px;
     border-color: rgb(255, 0, 234);
+    color:yellow;
 }
 
 #prematchHeader1, #prematchHeader2{
@@ -156,9 +157,10 @@ h2{
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
     font-family: Alexis;
     padding: 10px;
-    background-color: rgb(255, 0, 234);
+    background-color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
+    color:rgb(255, 0, 234);
 }
 
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
@@ -178,7 +180,8 @@ h2{
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(0, 255, 0);
+    background-color: black;
+    color: rgb(0, 255, 0);
     padding: 10px;
 }
 
@@ -200,12 +203,14 @@ h1 .odd {
     font-family: Alexis;
     text-align: center;
     color: rgb(255, 0, 234);
+    background-color: black;
 }
 
 h1 .even {
     font-family: Alexis;
     text-align: center;
     color: #42B333;
+    background-color: black;
 }
 
 table {
