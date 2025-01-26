@@ -92,16 +92,29 @@ html, body{
 }
 
 #auton{
+background-color:#000030 ;  
+color:yellow;
+border-color:rgb(0, 255, 0);
 }
 
 #teleop{
+    background-color:#000030 ;  
+color:yellow;
+border-color:rgb(0, 255, 0);
 }
 
 #endgame{
+    background-color:#000030 ;  
+color:yellow;
+border-color:rgb(0, 255, 0);
 }
 
 #postmatch{
+    background-color:#000030 ;  
+color:yellow;
+border-color:rgb(0, 255, 0);
 }
+
 
 #qr-code{
   text-align: center;
