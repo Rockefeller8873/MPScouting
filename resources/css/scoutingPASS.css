@@ -12,7 +12,7 @@ html, body{
     margin: 0;
     padding: 0;
     color: yellow;
-    background-color: hsl(210, 100%, 50%);
+    background-color: hsl(0, 0%, 0%);
 }
 
 #prematch_table, #postmatch_table {
@@ -34,7 +34,7 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: black;
+    border-color: yellow;
 }
 
 .button {
@@ -43,14 +43,14 @@ html, body{
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
-    color: black;
-    border-color: black;
+    color: yellow;
+    border-color: yellow;
     border-width: 4px;
 }
 
 #postmatchHeader{
     border-width: 4px;
-    border-color: white;
+    border-color: yellow;
 }
 
 #prematchHeader1, #prematchHeader2{
