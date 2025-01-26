@@ -42,7 +42,7 @@ html, body{
     font-size: 16px;
 }
 
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
+#autonHeader1, #endgameHeader1, #teleopHeader1, #teleopHeader2{
     color: yellow;
     border-color: rgb(0, 255, 0);
     border-width: 4px;
@@ -54,12 +54,16 @@ html, body{
     color:yellow;
 }
 
-#prematchHeader1, #prematchHeader2{
+#prematchHeader1{
     color: yellow;
     border-color: rgb(0, 255, 0);
     border-width: 4px;
 }
-
+#prematchHeader2{
+    color: yellow;
+    border-color: rgb(255, 0, 234);
+    border-width: 4px;
+}
 #qrHeader1, #qrHeader2 {
     color: black;
 }
@@ -107,6 +111,7 @@ border-color:rgb(0, 255, 0);
     background-color:#000030 ;  
 color:yellow;
 border-color:rgb(0, 255, 0);
+
 }
 
 #postmatch{
