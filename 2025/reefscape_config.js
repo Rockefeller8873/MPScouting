@@ -50,7 +50,7 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
-      "code": "l",
+      "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
