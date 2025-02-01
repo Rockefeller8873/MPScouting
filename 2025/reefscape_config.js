@@ -11,7 +11,7 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
-var pitScouting = true;
+var pitScouting = false;
 var checkboxAs = 'YN';
 
 // Options
