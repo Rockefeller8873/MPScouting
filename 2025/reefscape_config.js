@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ilpe",
+      "defaultValue": "2025mtp",
       "required": "true"
     },
     { "name": "Match Level",
@@ -47,10 +47,10 @@ var config_data = `
         "r3": "Red-3",
         "b3": "Blue-3"
       },
-      "required":"true"
+      "required":"false"
     },
     { "name": "Team #",
-      "code": "t",
+      "code": "l",
       "type": "team",
       "min": 1,
       "max": 99999
@@ -58,10 +58,9 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2025/half_field.png",
+      "filename": "2025/field_image.png",
       "clickRestriction": "one",
-      "dimensions": "6 6",
-      "allowableResponses": "1 7 13 19 25 31",
+      "allowableResponses": "6 7 18 19 30 31 42 43 54 55 66 67",
       "shape": "circle 5 black red true"
     }
   ],
@@ -85,14 +84,6 @@ var config_data = `
     { "name": "Coral L4",
       "code": "ac4",
       "type": "counter"
-    },
-    { "name": "Auto Scoring Position",
-      "code": "asp",
-      "type": "clickable_image",
-      "filename": "2025/reef.png",
-      "dimensions": "6 6",
-      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
-      "shape": "circle 5 black red true"
     },
     { "name": "Processor Score",
       "code": "aps",
