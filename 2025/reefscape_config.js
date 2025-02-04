@@ -59,9 +59,9 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2025/reefscape_config.js",
+      "filename": "2025/field_image.png",
       "clickRestriction": "one",
-      "dimensions": "6 6",
+      "dimensions": "12 6",
       "allowableResponses": "1 7 13 19 25 31",
       "shape": "circle 5 black red true"
     }
