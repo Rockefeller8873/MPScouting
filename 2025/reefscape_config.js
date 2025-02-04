@@ -37,7 +37,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
-      "code": "e",
+      "code": "r",
       "type": "robot",
       "choices": {
         "r1": "Red-1",
