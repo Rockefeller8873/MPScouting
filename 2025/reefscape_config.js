@@ -262,6 +262,49 @@ var config_data = `
       "size": 15,
       "maxSize": 55
     }
-  ]
+  // Function to update QR Header, with null check for the element
+function updateQRHeader() {
+    let qrField = document.getElementById('qrField');  // Replace 'qrField' with your actual field ID
+    if (qrField) {
+        let fieldValue = qrField.value;  // Only proceed if the field exists
+        // Perform operations with fieldValue if necessary
+    } else {
+        console.warn('QR field not found, unable to update QR header');
+    }
 }
-`;
+
+// Function to regenerate the QR code, ensuring the element exists
+function qr_regenerate() {
+    let qrField = document.getElementById('qrField');  // Replace 'qrField' with actual field ID
+    if (qrField) {
+        // Regenerate QR logic here, if the field exists
+    } else {
+        console.warn('QR field not found, regeneration failed');
+    }
+}
+
+// Ensure that swipePage function is also updated to prevent errors
+function swipePage(pageID) {
+    let page = document.getElementById(pageID);  // Check that page element exists before accessing
+    if (page) {
+        // Your existing logic for swipePage
+    } else {
+       console.warn('Page not found:', pageID);
+    }
+
+// Ensure that all relevant elements in the DOM are loaded before interacting with them
+document.addEventListener('DOMContentLoaded', function() {
+    // Example of setting up an event listener to trigger page swipe
+    let nextButton = document.getElementById('nextButton');
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            // Call the swipePage function or any logic you want
+            swipePage('nextPage');
+        });
+    } else {
+        console.warn('Next button not found');
+    }
+
+    // You can call your functions to initialize them or perform any actions after the page is fully loaded
+    qr_regenerate();  // Example of calling qr_regenerate
+});
