@@ -1384,13 +1384,6 @@ function copyData(){
   navigator.clipboard.writeText(getData(dataFormat));
   document.getElementById('copyButton').setAttribute('value','Copied');
 }
-
-function clearForm() {
-  // Clear all form fields and reset to initial state
-  document.getElementById("scoutingForm").reset();
-  swipePage(-slide); // Go back to the first page
-}
-
 document.getElementById("clearForm").addEventListener("click", clearForm);
 
 window.onload = function () {
