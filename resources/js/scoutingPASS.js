@@ -23,7 +23,7 @@ var options = {
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
-var requiredFields = ["e", "m", "r", "s", "as"];
+var requiredFields = ["e", "m", "r", "l" "t" "s", "as"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -897,7 +897,7 @@ function qr_clear() {
   qr.clear()
 }
 
-function clearForm() {
+function clearForm(id=clearForm) {
   var match = 0;
   var e = 0;
 
@@ -1384,6 +1384,14 @@ function copyData(){
   navigator.clipboard.writeText(getData(dataFormat));
   document.getElementById('copyButton').setAttribute('value','Copied');
 }
+
+function clearForm() {
+  // Clear all form fields and reset to initial state
+  document.getElementById("scoutingForm").reset();
+  swipePage(-slide); // Go back to the first page
+}
+
+document.getElementById("clearForm").addEventListener("click", clearForm);
 
 window.onload = function () {
   let ret = configure();
