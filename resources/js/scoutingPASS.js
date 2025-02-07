@@ -12,9 +12,8 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
-var pitScouting = false;
+var pitScouting = true;
 var checkboxAs = 'YN';
-var ColWidth = '200px';
 
 // Options
 var options = {
@@ -23,8 +22,9 @@ var options = {
   quietZoneColor: '#FFFFFF'
 };
 
-// Built from the JSON
-var requiredFields = []; //["e", "m", "l", "r", "s", "as"];
+// Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
+//var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
+var requiredFields = ["e", "m", "r", "s", "as"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -152,14 +152,12 @@ function addTimer(table, idx, name, data) {
 function addCounter(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -334,7 +332,8 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("value", "none");
   if (data.hasOwnProperty('allowableResponses')) {
     let responses = data.allowableResponses.split(' ').map(Number)
-    inp.setAttribute("value", responses);
+    console.log(responses)
+      inp.setAttribute("value", responses);
   }
   cell.appendChild(inp);
 
@@ -404,14 +403,12 @@ function addClickableImage(table, idx, name, data) {
 function addText(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -459,14 +456,12 @@ function addText(table, idx, name, data) {
 function addNumber(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -524,14 +519,12 @@ function addNumber(table, idx, name, data) {
 function addRadio(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -585,7 +578,6 @@ function addRadio(table, idx, name, data) {
 function addCheckbox(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
@@ -593,7 +585,6 @@ function addCheckbox(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name + '&nbsp;';
-  cell2.style.width = ColWidth;
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
@@ -675,12 +666,6 @@ function addElement(table, idx, data) {
   return idx
 }
 
-function buildRequiredElementList(element) {
-	if (element.required == "true") {
-		requiredFields.push(element.code);
-	}
-}
-
 function configure() {
   try {
     var mydata = JSON.parse(config_data);
@@ -691,7 +676,6 @@ function configure() {
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
-	cell1.style.width = ColWidth;
     cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
@@ -742,7 +726,6 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
-	buildRequiredElementList(element);
   });
 
   // Configure auton screen
@@ -804,16 +787,16 @@ function validateData() {
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-	if (thisRF.value == "[]" || thisRF.value.length == 0) {
-	  if (rf == "as") {
-		rftitle = "Auto Start Position"
-	  } else {
-		thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-		rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-	  }
-	  errStr += rf + ": " + rftitle + "\n";
-	  ret = false;
-	}
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
+      }
+      errStr += rf + ": " + rftitle + "\n";
+      ret = false;
+    }
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
@@ -1057,19 +1040,8 @@ function drawFields(name) {
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
-    var imgWidth = img.width;
-    var imgHeight = img.height;
-    let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
-    let newWidth = img.width * scale_factor;
-    let newHeight = img.height * scale_factor;
-    if (newWidth > 0) {
-      ctx.canvas.width = newWidth
-    }
-    if (newHeight > 0) {
-      ctx.canvas.height = newHeight
-    }
-    ctx.clearRect(0, 0, newWidth, newHeight);
-    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+    ctx.clearRect(0, 0, f.width, f.height);
+    ctx.drawImage(img, 0, 0, f.width, f.height);
 
     var xyStr = document.getElementById("XY_" + code).value
     if (JSON.stringify(xyStr).length > 2) {
