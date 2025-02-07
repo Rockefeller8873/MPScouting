@@ -1,4 +1,5 @@
 
+
 // ScoutingPASS.js
 //
 // The guts of the ScountingPASS application
@@ -903,7 +904,7 @@ function clearForm() {
   var e = 0;
 
   if (pitScouting) {
-    swipePage(-1);
+    swipePage(-5);
   } else {
     swipePage(-5);
 
